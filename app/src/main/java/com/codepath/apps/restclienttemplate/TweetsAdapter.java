@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder> {
@@ -26,6 +27,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
         this.tweets=tweets;
     }
     //for each a row, inflate the layout
+    @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View View = LayoutInflater.from(context).inflate(R.layout.item_tweet, parent, false);
@@ -44,7 +46,18 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
     public int getItemCount() {
         return tweets.size();
     }
+    //Clean all elements of the recycler
+    public void clear(){
+        tweets.clear();
+        notifyDataSetChanged();
 
+    }
+    //Add a list of items
+public void addAll(List<Tweet> tweetsList){
+        tweets.addAll(tweetsList);
+        notifyDataSetChanged();
+
+}
 
     // Define  a viewHolder
     public class viewHolder extends RecyclerView.ViewHolder{
@@ -61,7 +74,7 @@ TextView tvScreenName;
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+      tvScreenName.setText(tweet.user.screenName);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
         }
     }

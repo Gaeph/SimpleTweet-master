@@ -10,15 +10,17 @@ import java.util.List;
 public class Tweet {
     private static JSONObject jsonObject;
     public String body;
-public String createAd;
+public String createdAt;
+public long id;
 public User user;
 
 public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
 
     Tweet tweet = new Tweet();
     tweet.body = jsonObject.getString("text");
-    tweet.createAd = jsonObject.getString("created_Ad");
-    tweet.user = User.fromJson(jsonObject.getJSONObject("User"));
+    tweet.createdAt = jsonObject.getString("created_at");
+    tweet.id =jsonObject.getLong("id");
+    tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
     return tweet;
 
 }
