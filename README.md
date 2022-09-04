@@ -45,8 +45,8 @@ Describe any challenges encountered while building the app.
 
 ## Open-source libraries used
 
-- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
-- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
+- [Android Async HTTP](https://github.com/Gaeph/SimpleTweet-master/blob/master/VgZ2OLZ%20-%20Imgur.gif) - Simple asynchronous HTTP requests with JSON parsing
+- [Glide](https://github.com/Gaeph/SimpleTweet-master/blob/master/VgZ2OLZ%20-%20Imgur.gif) - Image loading and caching library for Android
 
 ## License
 
