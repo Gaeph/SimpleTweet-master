@@ -1,12 +1,13 @@
-package com.codepath.apps.restclienttemplate.models;
-
+package com.codepath.apps.restclienttemplate;
 import androidx.room.Embedded;
+
+import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TweetWithUser {
-//@Embedded notation flattens  the properties of the User object into the object , preserving  encapsulation.
+    //@Embedded notation flattens  the properties of the User object into the object , preserving  encapsulation.
     @Embedded
     User user;
     @Embedded(prefix = "tweet_")

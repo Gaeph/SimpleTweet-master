@@ -1,5 +1,4 @@
 package com.codepath.apps.restclienttemplate;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.codepath.apps.restclienttemplate.R;
+import com.codepath.apps.restclienttemplate.TwitterApp;
+import com.codepath.apps.restclienttemplate.TwitterClient;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
@@ -19,9 +21,9 @@ import org.parceler.Parcels;
 import okhttp3.Headers;
 
 public class ComposeActivity extends AppCompatActivity {
-   public static final String TAG ="ComposeActivity";
+    public static final String TAG ="ComposeActivity";
     public static final int MAX_TWEET_LENGTH =140;
-EditText etCompose;
+    EditText etCompose;
     Button btnTweet;
     TwitterClient client;
     @Override
@@ -69,7 +71,7 @@ EditText etCompose;
                     }
                 });
             }
-            });
+        });
 
     }
 }

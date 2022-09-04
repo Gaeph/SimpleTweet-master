@@ -1,5 +1,4 @@
 package com.codepath.apps.restclienttemplate;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder> {
@@ -30,7 +28,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View View = LayoutInflater.from(context).inflate(R.layout.item_tweet, parent, false);
+        View View = LayoutInflater.from(context).inflate(R.layout.item_tweets, parent, false);
         return new viewHolder(View);
     }
     //Bind  values based on the position of the element
@@ -53,17 +51,17 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.viewHolder
 
     }
     //Add a list of items
-public void addAll(List<Tweet> tweetsList){
+    public void addAll(List<Tweet> tweetsList){
         tweets.addAll(tweetsList);
         notifyDataSetChanged();
 
-}
+    }
 
     // Define  a viewHolder
     public class viewHolder extends RecyclerView.ViewHolder{
-ImageView ivProfileImage;
-TextView tvBody;
-TextView tvScreenName;
+        ImageView ivProfileImage;
+        TextView tvBody;
+        TextView tvScreenName;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
@@ -74,8 +72,9 @@ TextView tvScreenName;
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
-      tvScreenName.setText(tweet.user.screenName);
+            tvScreenName.setText(tweet.user.screenName);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
         }
     }
 }
+

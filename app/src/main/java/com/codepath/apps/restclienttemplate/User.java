@@ -1,8 +1,10 @@
- package com.codepath.apps.restclienttemplate.models;
+package com.codepath.apps.restclienttemplate;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,20 +13,20 @@ import org.parceler.Parcel;
 import java.util.ArrayList;
 import java.util.List;
 
- @Parcel
- @Entity
+@Parcel
+@Entity
 public class User {
-     @ColumnInfo
-     @PrimaryKey
-     public long id;
-     @ColumnInfo
+    @ColumnInfo
+    @PrimaryKey
+    public long id;
+    @ColumnInfo
     public String name;
-     @ColumnInfo
+    @ColumnInfo
     public String screenName;
-     @ColumnInfo
+    @ColumnInfo
     public String profileImageUrl;
-     // empty constructor needed by the Parceler library
-public User(){}
+    // empty constructor needed by the Parceler library
+    public User(){}
     public  static User fromJson(JSONObject jsonObject) throws JSONException {
         User user = new User();
 
@@ -35,11 +37,12 @@ public User(){}
         return user;
     }
 
-     public static List<User> fromJsonTweetArray(List<Tweet> tweetsFromNetwork) {
-    List<User>users =new ArrayList<>();
-    for (int i=0;i<tweetsFromNetwork.size();i++){
-users.add(tweetsFromNetwork.get(i).user);
-         }
-    return users;
-     }
- }
+    public static List<User> fromJsonTweetArray(List<Tweet> tweetsFromNetwork) {
+        List<User>users =new ArrayList<>();
+        for (int i=0;i<tweetsFromNetwork.size();i++){
+            users.add(tweetsFromNetwork.get(i).user);
+        }
+        return users;
+    }
+}
+

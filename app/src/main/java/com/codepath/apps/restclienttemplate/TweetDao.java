@@ -1,9 +1,12 @@
-package com.codepath.apps.restclienttemplate.models;
+package com.codepath.apps.restclienttemplate;
+
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
 
@@ -18,3 +21,4 @@ public interface TweetDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertModel(User... users);
 }
+
